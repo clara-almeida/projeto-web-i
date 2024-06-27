@@ -1,3 +1,3 @@
-# trip-uol-v2
+# trip-uol-projeto final
 
-Exercício da discplina de webdesign do master de jornalismo de dados do Insper. Répilca do site da Trip - Uol.
+Exercício da disciplina de webdesign do master de jornalismo de dados do Insper. Répilca do site da Trip - Uol.
