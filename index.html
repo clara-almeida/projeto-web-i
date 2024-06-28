@@ -166,69 +166,7 @@
             </footer>
           </div>
         </div>
-        <div class="item tpm">
-          <a href="https://revistatrip.uol.com.br/tpm/o-dia-em-que-minha-filha-cresceu"
-            style="background-image: url(https://revistatrip.uol.com.br/upload/2024/05/664674de34395/despedida-dos-filhos-keka-reis-globoplay-tpm-he.jpg);"
-            class="thumb holder-figure-hidden">
-            <img
-              src="https://revistatrip.uol.com.br/upload/2024/05/664674de34395/despedida-dos-filhos-keka-reis-globoplay-tpm-he.jpg"
-              alt="O dia em que minha filha cresceu" class="holder-figure-img">
-
-          </a>
-          <div class="container">
-            <a href="https://revistatrip.uol.com.br/tpm/o-dia-em-que-minha-filha-cresceu">
-              <div class="title">
-                <h2>O dia em que minha filha cresceu</h2>
-              </div>
-              <p>Ao ver a minha filha se despedir da infância, eu tentava encontrar um novo jeito de ser mãe, enquanto
-                ela queria descobrir quem era. A única certeza é que eu não era mais tão importante assim para ela</p>
-            </a>
-            <footer class="clearfix">
-              <div class="pull-left">
-                <div class="tags hidden-xs hidden-sm">
-                  por
-                  <a href="https://revistatrip.uol.com.br/autores/keka-reis" class="bg bg-author">Keka Reis</a>
-                  <a href="https://revistatrip.uol.com.br/tpm" class="bg bg-tpm">Tpm</a>
-                  / <a href="https://revistatrip.uol.com.br/tags/maternidade">Maternidade</a>
-                  / <a href="https://revistatrip.uol.com.br/tags/infancia">Inf&acirc;ncia</a>
-                </div>
-              </div>
-              <div class="pull-right">
-                <time>
-                  9 min para ler
-                </time>
-                <div class="share" data-url="https://revistatrip.uol.com.br/tpm/o-dia-em-que-minha-filha-cresceu"
-                  data-image="https://revistatrip.uol.com.br/upload/2024/05/664674fb138a7/despedida-dos-filhos-keka-reis-globoplay-tpm-so.jpg"
-                  data-slug="tpm/o-dia-em-que-minha-filha-cresceu" data-title="O dia em que minha filha cresceu"
-                  data-description="Eu buscava um novo jeito de ser m&atilde;e, enquanto ela queria descobrir quem era"
-                  data-tweet="" data-caption="revistatpm.uol.com.br">
-                  <a href="whatsapp://send?text=O+dia+em+que+minha+filha+cresceu+-+https%3A%2F%2Frevistatrip.uol.com.br%2Ftpm%2Fo-dia-em-que-minha-filha-cresceu%3Futm_source%3Dwhatsapp%26utm_medium%3Dsite-share-icon"
-                    class="wa visible-xs visible-sm" data-origin="whatsapp"><i class="fa fa-whatsapp"></i></a>
-                  <a href="#" class="fb" data-origin="facebook"><i class="fa fa-facebook"></i></a>
-                  <a href="#" class="tw" data-origin="twitter"><i class="fa fa-twitter"></i></a>
-                  <a href="#" class="visible-xs" data-origin="linkedin"><i class="fa fa-linkedin"></i></a>
-                  <a href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Frevistatrip.uol.com.br%2Ftpm%2Fo-dia-em-que-minha-filha-cresceu&media=https%3A%2F%2Frevistatrip.uol.com.br%2Fupload%2F2024%2F05%2F664674fb138a7%2Fdespedida-dos-filhos-keka-reis-globoplay-tpm-so.jpg&description=O+dia+em+que+minha+filha+cresceu"
-                    class="visible-xs" data-origin="pinterest"><i class="fa fa-pinterest-p"></i></a>
-                  <a href="mailto:?Subject=O+dia+em+que+minha+filha+cresceu&Body=https%3A%2F%2Frevistatrip.uol.com.br%2Ftpm%2Fo-dia-em-que-minha-filha-cresceu"
-                    class="mail visible-xs"><i class="fa fa-envelope-o"></i></a>
-                  <a href="#" class="hidden-sm hidden-xs"><i class="fa fa-share-alt"></i></a>
-                  <div>
-                    <a href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Frevistatrip.uol.com.br%2Ftpm%2Fo-dia-em-que-minha-filha-cresceu&media=https%3A%2F%2Frevistatrip.uol.com.br%2Fupload%2F2024%2F05%2F664674fb138a7%2Fdespedida-dos-filhos-keka-reis-globoplay-tpm-so.jpg&description=O+dia+em+que+minha+filha+cresceu"
-                      class="pin" data-origin="pinterest"><i class="fa fa-pinterest-p"></i> <span>pinterest</span></a>
-                    <a href="#" class="li" data-origin="linkedin"><i class="fa fa-linkedin"></i>
-                      <span>linkedin</span></a>
-                    <a href="mailto:?Subject=O+dia+em+que+minha+filha+cresceu&Body=https%3A%2F%2Frevistatrip.uol.com.br%2Ftpm%2Fo-dia-em-que-minha-filha-cresceu"
-                      class="mail"><i class="fa fa-envelope-o"></i> <span>e-mail</span></a>
-
-                  </div>
-                </div>
-              </div>
-            </footer>
-          </div>
-        </div>
-      </div>
-
-
+        
       <div class="controls">
         <div class="container">
           <a href="#" class="prev ir">anterior</a>
@@ -319,6 +257,43 @@
         $("#jquery_jplayer_4064").jPlayer("pause");
       });
     });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audioPlayer = document.getElementById('audio-player-4064');
+    const audioUrl = audioPlayer.getAttribute('data-audio');
+    const audio = new Audio(audioUrl);
+  
+    const playButton = audioPlayer.querySelector('.jp-play a');
+    const pauseButton = audioPlayer.querySelector('.jp-pause a');
+    const progressSlider = audioPlayer.querySelector('.jp-progress-slider');
+  
+    playButton.addEventListener('click', function() {
+      audio.play();
+      playButton.style.display = 'none';
+      pauseButton.style.display = 'block';
+    });
+  
+    pauseButton.addEventListener('click', function() {
+      audio.pause();
+      playButton.style.display = 'block';
+      pauseButton.style.display = 'none';
+    });
+  
+    audio.addEventListener('timeupdate', function() {
+      const percentage = (audio.currentTime / audio.duration) * 100;
+      progressSlider.style.width = percentage + '%';
+    });
+  
+    audio.addEventListener('ended', function() {
+      playButton.style.display = 'block';
+      pauseButton.style.display = 'none';
+    });
+  
+    // Initialize
+    pauseButton.style.display = 'none';
+  });
   </script>
 
 </body>
