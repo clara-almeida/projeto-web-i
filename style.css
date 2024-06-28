@@ -322,7 +322,6 @@ label {
 
 .audio-player .container .bt-play-audio, .audio-player .container .bt-pause-audio {
   height: 0;
-  position: absolute;
   top: 0;
 }
 
