@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="fontawesome/css/all.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>
 </head>
 
 <body>
@@ -294,22 +295,28 @@
     </section>
   </main>
 
-  <script>
-    $(document).ready(function () {
-      // Seletor para o botão de play
-      $('.jp-play a').click(function (e) {
-        e.preventDefault(); // Prevenir o comportamento padrão do link
-        var playerId = $(this).closest('.audio-player').attr('id');
-        $('#' + playerId + ' .jp-jplayer').jPlayer({
-          ready: function () {
-            $(this).jPlayer('setMedia', {
-              mp3: $('#' + playerId).data('audio')
-            }).jPlayer('play'); // Inicia a reprodução quando o jPlayer estiver pronto
-          },
-          swfPath: 'your-path-to-swf',
-          supplied: 'mp3',
-          cssSelectorAncestor: '#' + playerId
-        });
+  <<script>
+    $(document).ready(function() {
+      // Initialize the jPlayer
+      $("#jquery_jplayer_4064").jPlayer({
+        ready: function() {
+          $(this).jPlayer("setMedia", {
+            mp3: "https://p.audio.uol.com.br/trip/2024/5/CarlosNobre_podcast.mp3"
+          });
+        },
+        swfPath: "/js",
+        supplied: "mp3",
+        cssSelectorAncestor: "#jp_container_4064"
+      });
+
+      // Handle play button click
+      $(".jp-play").click(function() {
+        $("#jquery_jplayer_4064").jPlayer("play");
+      });
+
+      // Handle pause button click
+      $(".jp-pause").click(function() {
+        $("#jquery_jplayer_4064").jPlayer("pause");
       });
     });
   </script>
