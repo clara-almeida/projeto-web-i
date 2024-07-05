@@ -206,7 +206,7 @@ label {
 
 .webdoor {
   padding-bottom: 60px;
-  position: relative;
+  position: relative;s
 }
 
 #webdoor .carousel .item {
@@ -238,17 +238,6 @@ label {
   text-align: center;
 }
 
-.item .container h2 {
-  --background-color: #FF0000;
-  box-shadow: 0 0 0 12px var(--background-color);
-  background-color: var(--background-color);
-  font-family: 'fugue';
-  display: inline;
-  font-size: 2.5em;
-  line-height: 1.5em;
-  margin: 0 0 15px;
-  text-transform: uppercase;
-}
 
 .container p {
   font-size: 1.2em;
@@ -312,81 +301,84 @@ label {
   float: left;
 }
 
-#webdoor .audio-player .container .bt-play-audio, #webdoor .audio-player .container .bt-pause-audio, #article header .audio-player .container .bt-play-audio, #article header .audio-player .container .bt-pause-audio, #article .audio-player .container .bt-play-audio, #article .audio-player .container .bt-pause-audio {
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  --background-color: #FF0000;
+  box-shadow: 0 0 0 12px var(--background-color);
+  background-color: var(--background-color);
+  font-family: 'fugue';
+  font-size: 2.5em;
+  line-height: 1.5em;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  text-align: center;
+  font-family: 'fugue';
+}
+
+.audio-player-container {
+  max-width: 600px; /* Define a largura máxima do contêiner do player */
+  margin: 0 auto; /* Centraliza o contêiner */
+}
+
+.audio-player .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça os elementos igualmente */
+  gap: 10px; /* Espaçamento entre os elementos */
+}
+
+.audio-player .bt-play-audio,
+.audio-player .bt-pause-audio {
   background: #FFFF33;
   display: block;
   height: 20px;
-  left: 0;
   width: 26px;
-}
-
-.audio-player .container .bt-play-audio, .audio-player .container .bt-pause-audio {
-  height: 0;
-  top: 0;
-}
-
-
-.audio-player .container .bt-play-audio, .audio-player .container .bt-pause-audio {
-    background: #FFFF33;
-    display: block;
-    height: 20px;
-    left: 15px;
-    width: 26px;
-}
-
-.audio-player .jp-gui .jp-progress-container .jp-progress-slider {
-  background: rgba(55, 49, 49, 0.5);
-  border: 0;
-  border-radius: 0;
-  height: 20px;
-}
-
-.ui-slider {
   position: relative;
-  text-align: left;
 }
 
-.ui-widget {
-  font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
-  font-size: 1.1em;
+.audio-player .jp-progress-container {
+  flex-grow: 1; /* Permite que a barra de progresso cresça para ocupar o espaço disponível */
+  background: rgba(55, 49, 49, 0.5);
+  border-radius: 5px;
+  height: 20px;
+  position: relative;
 }
 
-
-.audio-player .jp-gui .jp-progress-container {
-  padding: 0 200px;
-}
-
-.audio-player .jp-gui .jp-progress-container .jp-progress-slider .ui-slider-range {
+.audio-player .jp-progress-slider {
   background: #99CCCC;
-  border-radius: 0;
-}
-.ui-slider-horizontal .ui-slider-range-min {
-  left: 0;
-}
-.ui-slider-horizontal .ui-slider-range {
-  top: 0;
   height: 100%;
-}
-.ui-slider .ui-slider-range {
-  position: absolute;
-  z-index: 1;
-  font-size: .7em;
-  display: block;
-  border: 0;
-  background-position: 0 0;
+  width: 0; /* Inicialmente a barra de progresso terá largura zero */
+  transition: width 0.2s ease; /* Animação suave ao aumentar a largura */
 }
 
-.audio-player .jp-gui .jp-download {
+.jp-download {
   background: #FFFF33 !important;
   color: #000;
   display: block;
   height: 20px;
-  line-height: 22px;
-  position: absolute;
+  line-height: 20px;
   text-align: center;
-  right: 15px;
-  top: 0;
   width: 26px;
+}
+
+.jp-clearboth {
+  clear: both;
 }
 
 #trip-tv-home {

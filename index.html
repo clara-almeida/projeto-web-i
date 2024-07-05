@@ -90,34 +90,32 @@
                 alt="Que dia cai o fim do mundo? Professor Carlos Nobre responde" class="holder-figure-img">
 
             </a>
-            <div class="container">
-              <a
-                href="https://revistatrip.uol.com.br/trip-fm/que-dia-cai-o-fim-do-mundo-professor-carlos-nobre-responde">
+            <div class="audio-player-container">
+              <a href="https://revistatrip.uol.com.br/trip-fm/que-dia-cai-o-fim-do-mundo-professor-carlos-nobre-responde">
                 <div id="audio-player-4064" class="audio-player" data-id="4064"
                   data-audio="https://p.audio.uol.com.br/trip/2024/5/CarlosNobre_podcast.mp3"
                   data-url="https://revistatrip.uol.com.br/trip-fm/que-dia-cai-o-fim-do-mundo-professor-carlos-nobre-responde">
-                  <div class="container clearfix">
-                    <div id="jquery_jplayer_4064" class="jp-jplayer"></div>
-                    <div id="jp_container_4064" class="jp-container">
-                      <div class="jp-gui">
+                  <div id="jquery_jplayer_4064" class="jp-jplayer"></div>
+                  <div id="jp_container_4064" class="jp-container">
+                    <div class="jp-gui">
+                      <div class="controls">
                         <ul>
-                          <li class="jp-play"><a href="javascript:;" class="jp-play bt-play-audio ir" tabindex="1"
-                              title="play">play</a></li>
-                          <li class="jp-pause"><a href="javascript:;" class="jp-pause bt-pause-audio ir" tabindex="1"
-                              title="pause">pause</a></li>
+                          <li class="jp-play"><a href="javascript:;" class="jp-play bt-play-audio ir" tabindex="1" title="play">play</a></li>
+                          <li class="jp-pause"><a href="javascript:;" class="jp-pause bt-pause-audio ir" tabindex="1" title="pause">pause</a></li>
                         </ul>
                         <div class="jp-progress-container">
                           <div class="jp-progress-slider"></div>
                         </div>
-                        <a href="https://p.audio.uol.com.br/trip/2024/5/CarlosNobre_podcast.mp3" target="_blank"
-                          class="jp-download hidden-xs">
+                        <a href="https://p.audio.uol.com.br/trip/2024/5/CarlosNobre_podcast.mp3" target="_blank" class="jp-download hidden-xs">
                           <i class="fa fa-arrow-down"></i>
                         </a>
-                        <div class="jp-clearboth"></div>
-                      </div>
-                      <div class="jp-no-solution">
                       </div>
                     </div>
+                    <div class="jp-no-solution"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
 
                   </div>
                 </div>
@@ -179,7 +177,7 @@
     <section id="trip-tv-home" class="trip-tv hidden-xs hidden-sm">
       <header>
         <div class="container">
-          <h2><a href="https://revistatrip.uol.com.br/trip-tv">Trip TV</a></h2>
+          <h3><a href="https://revistatrip.uol.com.br/trip-tv">Trip TV</a></h3>
           <a href="https://revistatrip.uol.com.br/trip-tv" class="bt-plus"></a>
         </div>
       </header>
@@ -233,67 +231,69 @@
     </section>
   </main>
 
-  <<script>
+  <script>
+    // Aguarda o documento estar completamente carregado
     $(document).ready(function() {
-      // Initialize the jPlayer
+      // Inicializa o jPlayer
       $("#jquery_jplayer_4064").jPlayer({
+        // Quando o jPlayer estiver pronto
         ready: function() {
+          // Define o arquivo de mídia (áudio)
           $(this).jPlayer("setMedia", {
             mp3: "https://p.audio.uol.com.br/trip/2024/5/CarlosNobre_podcast.mp3"
           });
         },
+        // Caminho do arquivo SWF (necessário para compatibilidade com Flash)
         swfPath: "/js",
+        // Tipos de arquivos de mídia suportados
         supplied: "mp3",
-        cssSelectorAncestor: "#jp_container_4064"
+        // Selecionador de CSS para o contêiner do jPlayer
+        cssSelectorAncestor: "#jp_container_4064",
+        // Função executada quando o áudio começa a tocar
+        play: function() {
+          // Esconde o botão de play
+          $(".jp-play").hide();
+          // Mostra o botão de pause
+          $(".jp-pause").show();
+        },
+        // Função executada quando o áudio é pausado
+        pause: function() {
+          // Mostra o botão de play
+          $(".jp-play").show();
+          // Esconde o botão de pause
+          $(".jp-pause").hide();
+        },
+        // Função executada quando o áudio termina
+        ended: function() {
+          // Mostra o botão de play
+          $(".jp-play").show();
+          // Esconde o botão de pause
+          $(".jp-pause").hide();
+        },
+        // Função executada durante a atualização do tempo do áudio
+        timeupdate: function(event) {
+          // Calcula a porcentagem do tempo do áudio decorrido
+          var percentage = (event.jPlayer.status.currentTime / event.jPlayer.status.duration) * 100;
+          // Atualiza a largura da barra de progresso
+          $(".jp-progress-slider").css("width", percentage + "%");
+        }
       });
-
-      // Handle play button click
+  
+      // Esconde o botão de pause inicialmente
+      $(".jp-pause").hide();
+  
+      // Manipula o clique no botão de play
       $(".jp-play").click(function() {
+        // Dá play no áudio
         $("#jquery_jplayer_4064").jPlayer("play");
       });
-
-      // Handle pause button click
+  
+      // Manipula o clique no botão de pause
       $(".jp-pause").click(function() {
+        // Dá pause no áudio
         $("#jquery_jplayer_4064").jPlayer("pause");
       });
     });
-  </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const audioPlayer = document.getElementById('audio-player-4064');
-    const audioUrl = audioPlayer.getAttribute('data-audio');
-    const audio = new Audio(audioUrl);
-  
-    const playButton = audioPlayer.querySelector('.jp-play a');
-    const pauseButton = audioPlayer.querySelector('.jp-pause a');
-    const progressSlider = audioPlayer.querySelector('.jp-progress-slider');
-  
-    playButton.addEventListener('click', function() {
-      audio.play();
-      playButton.style.display = 'none';
-      pauseButton.style.display = 'block';
-    });
-  
-    pauseButton.addEventListener('click', function() {
-      audio.pause();
-      playButton.style.display = 'block';
-      pauseButton.style.display = 'none';
-    });
-  
-    audio.addEventListener('timeupdate', function() {
-      const percentage = (audio.currentTime / audio.duration) * 100;
-      progressSlider.style.width = percentage + '%';
-    });
-  
-    audio.addEventListener('ended', function() {
-      playButton.style.display = 'block';
-      pauseButton.style.display = 'none';
-    });
-  
-    // Initialize
-    pauseButton.style.display = 'none';
-  });
   </script>
 
 </body>
